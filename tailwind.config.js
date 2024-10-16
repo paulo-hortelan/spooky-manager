@@ -4,7 +4,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                sans: [
+		'Intervar',
+		 ...defaultTheme.fontFamily.sans,
+		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php"
+	],
             },
         },
     },
@@ -25,7 +29,8 @@ module.exports = {
         './resources/**/*.twig',
     ],
     plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-    ],
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/typography'),
+		require("daisyui")
+	],
 }
