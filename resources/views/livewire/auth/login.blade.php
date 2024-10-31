@@ -1,5 +1,8 @@
-<div>
-    <x-header :title="$title" separator progress-indicator>
+<div class="container max-w-md p-4 mx-auto">
+    <x-header separator progress-indicator>
+        <x-slot:brand>
+            <x-icon name="o-envelope" class="w-12 h-12 p-2 text-white bg-orange-500 rounded-full" />
+        </x-slot:brand>
     </x-header>
     <x-form wire:submit="authenticate">
         <x-input label="Email" icon="o-envelope" wire:model="email" hint="Enter your email" />

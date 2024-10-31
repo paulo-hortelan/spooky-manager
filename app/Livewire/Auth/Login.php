@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Livewire\Attributes\Layout;
 
 class Login extends Component
 {
@@ -31,6 +32,7 @@ class Login extends Component
         }
     }
 
+    #[Layout('components.layouts.guest')]
     public function render()
     {
         return view('livewire.auth.login');
