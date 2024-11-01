@@ -1,10 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 // Volt::route('/', 'auth.login');
 
 Volt::route('/login', 'auth.login')->name('login');
+
+Route::middleware('auth')->group(function () {
+    Volt::route('/', 'home');
+    // Volt::route('/users', 'users.index');
+    // Volt::route('/users/create', 'users.create');
+    // Volt::route('/users/{user}/edit', 'users.edit');
+    // ... more
+});
 
 // Route::middleware('auth')->group(function () {
 //     Volt::route('/', 'index');
@@ -21,17 +30,4 @@ Volt::route('/login', 'auth.login')->name('login');
  
 //     return redirect('/');
 // });
-
-// Route::get('/', Welcome::class)
-//     ->middleware(['auth', 'verified'])
-//     ->name('home');
-
 // // Authentication Routes
-
-// Route::get('login', Login::class)
-//     ->middleware('guest')
-//     ->name('login');
-
-// Route::get('register', Register::class)
-//     ->middleware('guest')
-//     ->name('register');
