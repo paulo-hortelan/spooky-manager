@@ -20,4 +20,10 @@ new class extends Component {
             <x-input placeholder="Search..." wire:model.live.debounce="search" clearable icon="o-magnifying-glass" />
         </x-slot:middle>
     </x-header>
+
+    @foreach ($vault->secrets as $secrets)
+        <x-card title="Your stats" subtitle="Our findings about you" shadow separator class="my-5">
+            I have title, subtitle, separator and shadow.
+        </x-card>
+    @endforeach
 </div>
