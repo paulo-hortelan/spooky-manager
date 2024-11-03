@@ -9,6 +9,7 @@ Volt::route('/login', 'auth.login')->name('login');
 
 Route::middleware('auth')->group(function () {
     Volt::route('/', 'home');
+    Volt::route('/vault/{vaultId}', 'vault')->name('vault.show');
     // Volt::route('/users', 'users.index');
     // Volt::route('/users/create', 'users.create');
     // Volt::route('/users/{user}/edit', 'users.edit');

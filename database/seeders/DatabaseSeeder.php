@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
         $r2s1 = $r2->subfolders()->create(['name' => 'Subfolder 1']);
         $r2s2 = $r2->subfolders()->create(['name' => 'Subfolder 2']);
 
-
         $vault = $r1s1s1->vaults()->create(['name' => 'My Vault']);
 
         $secret1 = $vault->secrets()->create([

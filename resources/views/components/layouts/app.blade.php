@@ -24,8 +24,12 @@
         </x-slot:actions>
     </x-nav>
 
+
+
     {{-- MAIN --}}
     <x-main full-width>
+
+
         {{-- SIDEBAR --}}
         <x-slot:sidebar drawer="main-drawer" collapsible class="bg-base-100 lg:bg-inherit">
 
@@ -57,13 +61,19 @@
             </x-menu>
         </x-slot:sidebar>
 
-        {{-- The `$slot` goes here --}}
+
+
         <x-slot:content>
-            {{ $slot }}
+            {{-- {{ $slot }} --}}
+
+            @if (request()->route('vaultId'))
+                <livewire:vault :vaultId="request()->route('vaultId')" />
+            @else
+                <div>Please select a vault to display its details.</div>
+            @endif
         </x-slot:content>
     </x-main>
 
-    {{--  TOAST area --}}
     <x-toast />
 </body>
 

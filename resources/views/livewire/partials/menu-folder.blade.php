@@ -14,6 +14,14 @@ state('folder');
             @endforeach
         </x-menu-sub>
     @else
-        <x-menu-item :title="$folder->name" icon="o-folder" link="#" />
+        @if ($folder->vaults->isNotEmpty())
+            @foreach ($folder->vaults as $vault)
+                <x-menu-item :title="$vault->name" icon="o-key" href="{{ route('vault.show', $vault->id) }}"
+                    wire:loading.attr="disabled" />
+            @endforeach
+        @else
+            <x-menu-item :title="$folder->name" icon="o-folder" link="#" />
+        @endif
+
     @endif
 </div>
