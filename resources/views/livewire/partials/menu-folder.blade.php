@@ -1,8 +1,15 @@
 <?php
 
-use function Livewire\Volt\{state};
+use Livewire\Volt\Component;
 
-state('folder');
+new class extends Component {
+    public $folder;
+
+    public function mount($folder)
+    {
+        $this->folder = $folder;
+    }
+};
 
 ?>
 
@@ -16,11 +23,10 @@ state('folder');
     @else
         @if ($folder->vaults->isNotEmpty())
             @foreach ($folder->vaults as $vault)
-                <x-menu-item :title="$vault->name" icon="o-key" href="{{ route('vault.show', $vault->id) }}"
-                    wire:loading.attr="disabled" />
+                <x-menu-item :title="$vault->name" icon="o-key" link="{{ route('vault.show', $vault->id) }}" />
             @endforeach
         @else
-            <x-menu-item :title="$folder->name" icon="o-folder" link="#" />
+            <x-menu-item :title="$folder->name" icon="o-folder" />
         @endif
 
     @endif

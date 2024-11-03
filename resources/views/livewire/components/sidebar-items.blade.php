@@ -18,5 +18,4 @@ new class extends Component {
     @foreach ($rootFolders as $rootFolder)
         <livewire:partials.menu-folder :folder="$rootFolder" :key="$rootFolder->id" />
     @endforeach
-
 </div>
