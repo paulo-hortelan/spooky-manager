@@ -10,13 +10,6 @@ new class extends Component {
     {
         $this->vault = Vault::find($vaultId);
     }
-
-    // public function selectVault($vaultId)
-    // {
-    //     $this->selectedVaultId = $vaultId;
-    //     // Optionally emit an event if you want to listen for this outside this component
-    //     $this->emit('vaultChanged', $vaultId);
-    // }
 };
 
 ?>

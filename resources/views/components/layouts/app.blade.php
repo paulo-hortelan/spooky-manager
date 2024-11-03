@@ -41,7 +41,6 @@
             {{-- MENU --}}
             <x-menu activate-by-route>
 
-                {{-- User --}}
                 @if ($user = auth()->user())
                     <x-menu-separator />
 
@@ -57,7 +56,7 @@
                     <x-menu-separator />
                 @endif
 
-                <livewire:folder-menu />
+                <livewire:components.sidebar-items />
             </x-menu>
         </x-slot:sidebar>
 
